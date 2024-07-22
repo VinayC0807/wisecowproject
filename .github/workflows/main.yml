@@ -35,6 +35,8 @@ jobs:
         uses: azure/setup-kubectl@v1
         with:
           version: 'latest'
+      - name: Create kubeconfig directory
+        run: mkdir -p $HOME/.kube   
 
       - name: Set up Kubeconfig
         run: |
