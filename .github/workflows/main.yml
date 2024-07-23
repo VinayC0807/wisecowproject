@@ -54,7 +54,6 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           curl -sfL https://get.k3s.io | sh -
-          kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.4.0/cert-manager.yaml
           sudo systemctl start k3s
           sudo chown root:root /etc/rancher/k3s/k3s.yaml
           sudo chmod 644 /etc/rancher/k3s/k3s.yaml
@@ -63,4 +62,4 @@ jobs:
           kubectl apply -f deployment.yml 
           kubectl apply -f service.yml 
           kubectl apply -f ingress.yml 
-          kubectl apply -f cluster-issuer.yml
+
