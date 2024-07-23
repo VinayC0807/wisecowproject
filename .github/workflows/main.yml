@@ -53,7 +53,6 @@ jobs:
           
       - name: Deploy to Kubernetes
         run: |
-          echo "${KUBECONFIG}" | > $HOME/.kube/config
           kubectl apply -f deployment.yml --validate=false
           kubectl apply -f service.yml --validate=false
           kubectl apply -f ingress.yml --validate=false
