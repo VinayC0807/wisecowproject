@@ -55,6 +55,7 @@ jobs:
         run: |
           curl -sfL https://get.k3s.io | sh -
           sudo systemctl start k3s
+          export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
           kubectl apply -f deployment.yml 
           kubectl apply -f service.yml 
           kubectl apply -f ingress.yml 
