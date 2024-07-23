@@ -9,7 +9,7 @@ COPY wisecow.sh .
 
 #Set execute permission for the shell script
 RUN chmod +x wisecow.sh
-RUN sudo apt install fortune-mod cowsay -y
+RUN apt install fortune-mod cowsay -y
 
 #Expose the application port
 EXPOSE 4499
